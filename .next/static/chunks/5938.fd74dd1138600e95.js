@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[5938],{5938:(e,s,r)=>{r.r(s),r.d(s,{default:()=>c});var a=r(5155);r(2115);let c=e=>{let{children:s}=e;return(0,a.jsx)("div",{className:"min-h-screen bg-background",children:s})}}}]);

@@ -1,0 +1,1 @@
+"use strict";exports.id=3598,exports.ids=[3598],exports.modules={53598:(e,r,s)=>{s.r(r),s.d(r,{default:()=>d});var t=s(60687);s(43210);let d=()=>(0,t.jsxs)("div",{children:[(0,t.jsx)("h2",{className:"text-xl font-bold",children:"Gu\xeda de Pronunciaci\xf3n"}),(0,t.jsx)("p",{children:"Aprende a pronunciar correctamente con esta gu\xeda."})]})}};

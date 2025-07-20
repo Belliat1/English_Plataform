@@ -1,0 +1,1 @@
+"use strict";exports.id=1990,exports.ids=[1990],exports.modules={1990:(e,s,r)=>{r.r(s),r.d(s,{default:()=>t});var d=r(60687);r(43210);let t=({children:e})=>(0,d.jsx)("div",{className:"min-h-screen bg-background",children:e})}};

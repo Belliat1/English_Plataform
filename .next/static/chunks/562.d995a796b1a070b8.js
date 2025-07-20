@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[562],{562:(e,n,a)=>{a.r(n),a.d(n,{default:()=>r});var c=a(5155);a(2115);let r=()=>(0,c.jsxs)("div",{children:[(0,c.jsx)("h2",{className:"text-xl font-bold",children:"Gu\xeda de Pronunciaci\xf3n"}),(0,c.jsx)("p",{children:"Aprende a pronunciar correctamente con esta gu\xeda."})]})}}]);
