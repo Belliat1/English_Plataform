@@ -23,17 +23,29 @@ const LoginForm: React.FC = () => {
     setError(null);
     setLoading(true);
 
-    const result = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
+    try {
+    const res = await fetch('/api/auth/manual-login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
     });
 
-    if (result?.error) {
-      setError("Correo o contraseña incorrectos.");
-    } else {
-      router.push("/progress");
+    const data = await res.json();
+
+    if (!res.ok || !data.ok) {
+      setError(data.error || 'Correo o contraseña incorrectos.');
+      setLoading(false);
+      return;
     }
+
+    localStorage.setItem('token', data.token);
+    router.push('/progress');
+  } catch (err) {
+    setError('Error al conectar con el servidor.');
+  } finally {
+    setLoading(false);
+  }
+
 
     setLoading(false);
   };

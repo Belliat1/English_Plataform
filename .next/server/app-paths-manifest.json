@@ -1,17 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
+  "/(auth)/login/page": "app/(auth)/login/page.js",
+  "/api/auth/manual-login/route": "app/api/auth/manual-login/route.js",
+  "/api/auth/session/route": "app/api/auth/session/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js",
-  "/(auth)/reset-password/page": "app/(auth)/reset-password/page.js",
-  "/(with-sidebar)/exams/[moduleId]/page": "app/(with-sidebar)/exams/[moduleId]/page.js",
-  "/(with-sidebar)/page": "app/(with-sidebar)/page.js",
-  "/(auth)/reset-password/success/page": "app/(auth)/reset-password/success/page.js",
-  "/(with-sidebar)/exams/level/[levelTitle]/page": "app/(with-sidebar)/exams/level/[levelTitle]/page.js",
-  "/(with-sidebar)/certificates/page": "app/(with-sidebar)/certificates/page.js",
-  "/(with-sidebar)/resources/[id]/page": "app/(with-sidebar)/resources/[id]/page.js",
-  "/(with-sidebar)/support/page": "app/(with-sidebar)/support/page.js",
-  "/(auth)/reset-password/new-password/page": "app/(auth)/reset-password/new-password/page.js",
-  "/(with-sidebar)/resources/page": "app/(with-sidebar)/resources/page.js",
-  "/(with-sidebar)/progress/module/[id]/page": "app/(with-sidebar)/progress/module/[id]/page.js",
-  "/(auth)/login/page": "app/(auth)/login/page.js"
+  "/page": "app/page.js"
 }

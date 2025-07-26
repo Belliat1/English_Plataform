@@ -1,5 +1,8 @@
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { connectDB } from '@/lib/db';
+import User from '@/models/User';
+import bcrypt from 'bcryptjs';
 
 const handler = NextAuth({
   providers: [
@@ -10,24 +13,24 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // 🔐 Simulación de usuario válido
-        const validEmail = 'admin@demo.com';
-        const validPassword = '123456';
+        // ✅ Conectar a la base de datos
+        await connectDB();
 
-        if (
-          credentials?.email === validEmail &&
-          credentials?.password === validPassword
-        ) {
-          return {
-            id: '1',
-            name: 'Demo User',
-            email: validEmail,
-            role: 'admin',
-          };
-        }
+        // ✅ Buscar usuario en la base de datos
+        const user = await User.findOne({ email: credentials?.email });
+        if (!user) return null;
 
-        // ❌ Si no coinciden, no se autoriza
-        return null;
+        // ✅ Comparar contraseñas
+        const isValid = await bcrypt.compare(credentials!.password, user.password);
+        if (!isValid) return null;
+
+        // ✅ Retornar datos que espera el frontend
+        return {
+          id: user._id.toString(),
+          name: user.name,
+          email: user.email,
+          role: user.role,
+        };
       },
     }),
   ],
@@ -45,7 +48,12 @@ const handler = NextAuth({
       return token;
     },
     async session({ session, token }) {
-      session.user = token.user;
+      session.user = token.user as {
+        id: string;
+        name: string;
+        email: string;
+        role: string;
+      };
       return session;
     },
   },
